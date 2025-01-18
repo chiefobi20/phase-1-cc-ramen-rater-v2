@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", main)
 // Callbacks
 const handleClick = (ramen) => {
   const ramenDetail = document.getElementById("ramen-detail")
-  const detailImage = ramenDetail.querySelector("detail-image")
+  const detailImage = ramenDetail.querySelector(".detail-image")
   const detailName = ramenDetail.querySelector(".name")
   const detailRestaurant = ramenDetail.querySelector(".restaurant")
   const detailComment = document.getElementById("comment-display")
@@ -16,7 +16,7 @@ const handleClick = (ramen) => {
 
   detailImage.src = ramen.image
   detailImage.alt = ramen.name
-  detailImage.textContent = ramen.name
+  detailName.textContent = ramen.name
   detailRestaurant.textContent = ramen.restaurant
   detailRating.textContent = ramen.rating
   detailComment.textContent = ramen.comment
@@ -48,7 +48,7 @@ const addSubmitListener = () => {
 }
 
 const displayRamens = () => {
-  fetch("http:/localhost:3000/ramens")
+  fetch("http://localhost:3000/ramens")
     .then((response) => response.json())
     .then((ramens) => {
       const ramenMenu = document.getElementById("ramen-menu")
